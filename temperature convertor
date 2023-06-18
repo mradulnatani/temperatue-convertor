@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>temperature convertor</title>
+    <style>
+        *{
+            background-color:mintcream;
+        }
+        #submit{
+            background-color: lightgreen;
+            width: 50vh;
+            height: 3vh;
+       }
+       .container h1{
+        margin: 0vh 85vh 0vh 85vh;
+        display:inline;
+        background-color: darkseagreen;
+       }
+       .container form{
+        border: 5px solid red;
+        padding: 5vh;
+        margin: 0vh 80vh 0vh 80vh;
+        border-radius: 5vh;
+       }
+       .container p{
+        margin: 0vh 80vh 0vh 80vh;
+        border: 1px solid black;
+       }
+    </style>
+</head>
+
+<div class="container">
+    <h1><u>Temperature Converter</u></h1>
+    <br>
+    <br>
+    <form onsubmit="convertTemp(event)">
+        <label for="temp">Temperature in Celsius:</label>
+        <input type="text" id="temp" name="temp">
+        <br>
+        <input type="submit" value="Convert to Fahrenheit"id="submit">
+    </form>
+    <p id="output"></p>
+</div>
+<script>
+    function convertTemp(event) {
+        event.preventDefault();
+        var temp = document.getElementById("temp").value;
+        var fahrenheit = (temp * 9/5) + 32;
+        document.getElementById("output").innerHTML = fahrenheit + "°F";
+    }
+</script>
+
+</html>
